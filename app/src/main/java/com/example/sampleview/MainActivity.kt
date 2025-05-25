@@ -42,7 +42,7 @@ class MainActivity : ComponentActivity() {
 
         // Initialize Places SDK
         if (!Places.isInitialized()) {
-            Places.initialize(applicationContext, "AIzaSyBpdIbcsDSiVXRxGZx3mHr2DGSUyhNAv5E")
+            Places.initialize(applicationContext, "api_key")
         }
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
@@ -204,7 +204,7 @@ fun fetchLocationAndPlaces(
 }
 
 suspend fun fetchNearbyCoolPlaces(lat: Double, lon: Double): Map<String, List<String>> {
-    val apiKey = "AIzaSyBpdIbcsDSiVXRxGZx3mHr2DGSUyhNAv5E"
+    val apiKey = "api_key"
     val radius = 2000
     val types = listOf("tourist_attraction", "shopping_mall", "park")
 
